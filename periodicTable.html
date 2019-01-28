@@ -154,7 +154,7 @@
                 <td id="7-28" class="other-metals" onclick="popupQuiz(this)">?</td>
                 <td id="7-29" class="other-metals" onclick="popupQuiz(this)">?</td>
                 <td id="7-30" class="other-metals" onclick="popupQuiz(this)">?</td>
-                <td id="7-31">?</td>
+                <td id="7-31" onclick="popupQuiz(this)">?</td>
                 <td id="7-32" class="nobel-gasses" onclick="popupQuiz(this)">?</td>
             </tr>
         </tbody>
@@ -204,7 +204,7 @@
         </tbody>
     </table>
 </div>
-<div id="elementDataDiv" style="display: none; width: 200px; height: 150px; position: fixed; top: 40%; left: 40%; background: lightblue; padding: 3px">
+<div class="popup-quiz" id="elementDataDiv" style="display: none;">
     <form id="elementData">
         <input type="hidden" id="position">
         <label for="name">Name: </label>
@@ -216,7 +216,9 @@
         <label for="symbol">Symbol: </label>
         <input type="text" id="symbol" style="position: relative; right: 0; width: 30px" />
         <br>
-        <input type="button" value="Submit Answer" onclick="submitData(formToJSON($('#elementData')[0].elements))" />
+        <input type="button" value="Submit Answer" onclick="submitData(formToJSON($('#elementData')[0].elements))" style="background: darkblue; color: white" />
+        <br>
+        <input type="button" value="Close" onclick="closeModal()" style="color: red" />
     </form>
 </div>
 </body>

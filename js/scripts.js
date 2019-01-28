@@ -30,7 +30,7 @@ function submitData(elementData) {
     if (!elements[elementData.position]) {
         alert("Unable to find that element. Please select another element.");
         // Hide the modal.
-        $('#elementDataDiv').toggle(false);
+        closeModal();
         return;
     }
 
@@ -51,6 +51,10 @@ function submitData(elementData) {
     $("#" + elementData.position)[0].innerHTML = testElement.buildElementCell();
 
     // Hide the modal.
+    closeModal();
+}
+
+function closeModal() {
     $('#elementDataDiv').toggle(false);
 }
 
