@@ -1,0 +1,53 @@
+td {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.td-clickable {
+    /* intentionally left blank. This is used for events. */
+}
+
+.hydrogen {
+    background-color: gray;
+}
+
+.nobel-gasses {
+    background-color: cornflowerblue;
+}
+
+.alkali-metals {
+    background-color: orange;
+}
+
+.alkaline-earth-metals {
+    background-color: yellow;
+}
+
+.metalloids {
+    background-color: greenyellow;
+}
+
+.non-metals {
+    background-color: greenyellow;
+}
+
+.halogens {
+    background-color: greenyellow;
+}
+
+.other-metals {
+    background-color: aquamarine;
+}
+
+.transition-elements {
+    background-color: blueviolet;
+}
+
+.lanthanoids {
+    background-color: coral;
+}
+
+.actinoids {
+    background-color: orchid;
+}

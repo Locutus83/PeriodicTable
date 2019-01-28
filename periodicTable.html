@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Periodic Table of Elements</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/elements.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+<div>
+    <h2>Options</h2>
+    <input type="radio" name="mode" id="quizMode" checked />
+    <label for="quizMode">Quiz Mode!</label>
+    <input type="radio" name="mode" id="studyMode" disabled />
+    <label for="studyMode">Study Mode!</label>
+</div>
+<div id="quizTable">
+    <h2>Periodic Table of Elements</h2>
+    <p>
+        Click on an element and fill in the details that you are familiar with. Good luck!
+    </p>
+    <!--
+        This table will be 18 cells wide and will soon have an expansion table following it for elements 57-71 and 89-103.
+    -->
+    <table border="1">
+        <thead>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+        </thead>
+        <!--
+            Since the table already has a numbering system, for the IDs, I will use row-col notation. Not that it's too
+            hard to find the atomic number...
+        -->
+        <tbody>
+            <tr>
+                <td id="1-1" class="hydrogen" onclick="popupQuiz(this)">?</td>
+                <td border="none" colspan="16">&nbsp;</td>
+                <td id="1-18" class="nobel-gasses" onclick="popupQuiz(this)">?</td>
+            </tr>
+            <tr>
+                <td id="2-1" class="alkali-metals" onclick="popupQuiz(this)">?</td>
+                <td id="2-2" class="alkaline-earth-metals" onclick="popupQuiz(this)">?</td>
+                <td border="none" colspan="10">&nbsp;</td>
+                <td id="2-13" class="metalloids" onclick="popupQuiz(this)">?</td>
+                <td id="2-14" class="non-metals" onclick="popupQuiz(this)">?</td>
+                <td id="2-15" class="non-metals" onclick="popupQuiz(this)">?</td>
+                <td id="2-16" class="non-metals" onclick="popupQuiz(this)">?</td>
+                <td id="2-17" class="halogens" onclick="popupQuiz(this)">?</td>
+                <td id="2-18" class="nobel-gasses" onclick="popupQuiz(this)">?</td>
+            </tr>
+            <tr>
+                <td id="3-1" class="alkali-metals" onclick="popupQuiz(this)">?</td>
+                <td id="3-2" class="alkaline-earth-metals" onclick="popupQuiz(this)">?</td>
+                <td border="none" colspan="10">&nbsp;</td>
+                <td id="3-13" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="3-14" class="metalloids" onclick="popupQuiz(this)">?</td>
+                <td id="3-15" class="non-metals" onclick="popupQuiz(this)">?</td>
+                <td id="3-16" class="non-metals" onclick="popupQuiz(this)">?</td>
+                <td id="3-17" class="halogens" onclick="popupQuiz(this)">?</td>
+                <td id="3-18" class="nobel-gasses" onclick="popupQuiz(this)">?</td>
+            </tr>
+            <tr>
+                <td id="4-1" class="alkali-metals" onclick="popupQuiz(this)">?</td>
+                <td id="4-2" class="alkaline-earth-metals" onclick="popupQuiz(this)">?</td>
+                <td id="4-3" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="4-4" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="4-5" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="4-6" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="4-7" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="4-8" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="4-9" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="4-10" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="4-11" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="4-12" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="4-13" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="4-14" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="4-15" class="metalloids" onclick="popupQuiz(this)">?</td>
+                <td id="4-16" class="non-metals" onclick="popupQuiz(this)">?</td>
+                <td id="4-17" class="halogens" onclick="popupQuiz(this)">?</td>
+                <td id="4-18" class="nobel-gasses" onclick="popupQuiz(this)">?</td>
+            </tr>
+            <tr>
+                <td id="5-1" class="alkali-metals" onclick="popupQuiz(this)">?</td>
+                <td id="5-2" class="alkaline-earth-metals" onclick="popupQuiz(this)">?</td>
+                <td id="5-3" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="5-4" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="5-5" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="5-6" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="5-7" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="5-8" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="5-9" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="5-10" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="5-11" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="5-12" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="5-13" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="5-14" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="5-15" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="5-16" class="metalloids" onclick="popupQuiz(this)">?</td>
+                <td id="5-17" class="halogens" onclick="popupQuiz(this)">?</td>
+                <td id="5-18" class="nobel-gasses" onclick="popupQuiz(this)">?</td>
+            </tr>
+            <tr>
+                <td id="6-1" class="alkali-metals" onclick="popupQuiz(this)">?</td>
+                <td id="6-2" class="alkaline-earth-metals" onclick="popupQuiz(this)">?</td>
+                <td>57-71</td>
+                <td id="6-18" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="6-19" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="6-20" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="6-21" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="6-22" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="6-23" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="6-24" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="6-25" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="6-26" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="6-27" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="6-28" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="6-29" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="6-30" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="6-31" class="halogens" onclick="popupQuiz(this)">?</td>
+                <td id="6-32" class="nobel-gasses" onclick="popupQuiz(this)">?</td>
+            </tr>
+            <tr>
+                <td id="7-1" class="alkali-metals" onclick="popupQuiz(this)">?</td>
+                <td id="7-2" class="alkaline-earth-metals" onclick="popupQuiz(this)">?</td>
+                <td>89-103</td>
+                <td id="7-18" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="7-19" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="7-20" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="7-21" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="7-22" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="7-23" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="7-24" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="7-25" class="transition-elements" onclick="popupQuiz(this)">?</td>
+                <td id="7-26" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="7-27" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="7-28" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="7-29" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="7-30" class="other-metals" onclick="popupQuiz(this)">?</td>
+                <td id="7-31">?</td>
+                <td id="7-32" class="nobel-gasses" onclick="popupQuiz(this)">?</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h3>Extended Table</h3>
+    <table>
+        <tbody>
+        <tr>
+            <td id="6-3" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-4" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-5" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-6" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-7" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-8" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-9" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-10" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-11" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-12" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-13" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-14" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-15" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-16" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+            <td id="6-17" class="lanthanoids" onclick="popupQuiz(this)">?</td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <td id="7-3" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-4" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-5" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-6" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-7" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-8" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-9" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-10" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-11" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-12" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-13" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-14" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-15" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-16" class="actinoids" onclick="popupQuiz(this)">?</td>
+            <td id="7-17" class="actinoids" onclick="popupQuiz(this)">?</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="elementDataDiv" style="display: none; width: 200px; height: 150px; position: fixed; top: 40%; left: 40%; background: lightblue; padding: 3px">
+    <form id="elementData">
+        <input type="hidden" id="position">
+        <label for="name">Name: </label>
+        <input type="text" id="name" style="position: relative; right: 0; width: 100px" />
+        <br>
+        <label for="atomicNumber">Atomic Number: </label>
+        <input type="number" id="atomicNumber" value="0" style="position: relative; right: 0; width: 40px" />
+        <br>
+        <label for="symbol">Symbol: </label>
+        <input type="text" id="symbol" style="position: relative; right: 0; width: 30px" />
+        <br>
+        <input type="button" value="Submit Answer" onclick="submitData(formToJSON($('#elementData')[0].elements))" />
+    </form>
+</div>
+</body>
+</html>
