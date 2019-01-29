@@ -1,7 +1,7 @@
 function popupQuiz(source) {
     var tdId = source.id;
     var validIdRegex = /\d+-\d+/;
-    if (!validIdRegex.test(tdId)) {
+    if (!validIdRegex.test(tdId) || source.innerHTML !== '?') {
         return;
     }
 
@@ -16,8 +16,9 @@ function popupQuiz(source) {
     $('#elementDataDiv').toggle(true);
     $('#position').val(tdId);
     $('#name').val('');
-    $('#atomicNumber').val('0');
+    $('#atomicNumber').val('');
     $('#symbol').val('');
+    $('#name').focus();
 }
 
 function submitData(elementData) {
