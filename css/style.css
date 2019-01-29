@@ -66,3 +66,8 @@ td {
 .error-field {
     background-color: red;
 }
+
+.less-padding {
+    margin-top: 4px;
+    margin-bottom: 12px;
+}

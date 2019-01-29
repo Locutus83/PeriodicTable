@@ -15,6 +15,7 @@ function popupQuiz(source) {
     // Show the modal and reset the values.
     $('#elementDataDiv').toggle(true);
     $('#position').val(tdId);
+    $('#positionHeader')[0].innerText = tdId;
     $('#name').val('');
     $('#atomicNumber').val('');
     $('#symbol').val('');
