@@ -4,6 +4,7 @@ const Element = class {
         this.symbol = symbol;
         this.name = name;
         this.weight = weight;
+        this.errorCount = 0;
     }
 };
 
@@ -15,4 +16,8 @@ Element.prototype.buildElementCell = function() {
     }
 
     return cellData;
+};
+
+Element.prototype.toString = function () {
+    return "Name: " + this.name + "\nAtomic Number: " + this.atomicNumber + "\nSymbol: " + this.symbol
 };

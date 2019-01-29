@@ -29,14 +29,14 @@ td {
 }
 
 .non-metals {
-    background-color: greenyellow;
+    background-color: green;
 }
 
 .halogens {
-    background-color: greenyellow;
+    background-color: tan;
 }
 
-.other-metals {
+.poor-metals {
     background-color: aquamarine;
 }
 
@@ -61,4 +61,8 @@ td {
     left: 40%;
     background: lightblue;
     padding: 3px
+}
+
+.error-field {
+    background-color: red;
 }

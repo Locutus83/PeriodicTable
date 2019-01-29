@@ -44,7 +44,13 @@ function submitData(elementData) {
         ||
         testElement.name.toLowerCase() != elementData.name.toLowerCase()
     ) {
+        testElement.errorCount++;
         alert("This isn't accurate. Please try again.");
+        if (testElement.errorCount >= 3) {
+            alert("Here is what was expected:" + testElement.toString());
+            closeModal();
+            testElement.errorCount = 0;
+        }
         return;
     }
 
@@ -57,6 +63,68 @@ function submitData(elementData) {
 
 function closeModal() {
     $('#elementDataDiv').toggle(false);
+}
+
+function checkKey() {
+    if ($('#amText')[0].value.length > 0 && $('#amText')[0].value.toLowerCase() === 'alkali metals') {
+        $('#amCell')[0].classList.remove('error-field');
+    } else {
+        $('#amCell').addClass('error-field');
+    }
+    // aemText
+    if ($('#aemText')[0].value.toLowerCase() === 'alkaline earth metals') {
+        $('#aemCell')[0].classList.remove('error-field');
+    } else {
+        $('#aemCell').addClass('error-field');
+    }
+    // teText
+    if ($('#teText')[0].value.toLowerCase() === 'transition elements') {
+        $('#teCell')[0].classList.remove('error-field');
+    } else {
+        $('#teCell').addClass('error-field');
+    }
+    // pmText
+    if ($('#pmText')[0].value.toLowerCase() === 'poor metals') {
+        $('#pmCell')[0].classList.remove('error-field');
+    } else {
+        $('#pmCell').addClass('error-field');
+    }
+    // mText
+    if ($('#mText')[0].value.toLowerCase() === 'metalloids') {
+        $('#mCell')[0].classList.remove('error-field');
+    } else {
+        $('#mCell').addClass('error-field');
+    }
+    // nmText
+    if ($('#nmText')[0].value.toLowerCase() === 'non-metals') {
+        $('#nmCell')[0].classList.remove('error-field');
+    } else {
+        $('#nmCell').addClass('error-field');
+    }
+    // hText
+    if ($('#hText')[0].value.toLowerCase() === 'halogens') {
+        $('#hCell')[0].classList.remove('error-field');
+    } else {
+        $('#hCell').addClass('error-field');
+    }
+    // ngText
+    if ($('#ngText')[0].value.toLowerCase() === 'nobel gasses') {
+        $('#ngCell')[0].classList.remove('error-field');
+    } else {
+        $('#ngCell').addClass('error-field');
+    }
+    // lText
+    if ($('#lText')[0].value.toLowerCase() === 'lanthanoids') {
+        $('#lCell')[0].classList.remove('error-field');
+    } else {
+        $('#lCell').addClass('error-field');
+    }
+    // aText
+    if ($('#aText')[0].value.toLowerCase() === 'actinoids') {
+        $('#aCell')[0].classList.remove('error-field');
+    } else {
+        $('#aCell').addClass('error-field');
+    }
 }
 
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
