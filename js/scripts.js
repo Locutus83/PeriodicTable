@@ -1,3 +1,23 @@
+$(document).ready(function () {
+    $('input[type=radio][name=mode]').change(function () {
+        if (this.id === 'quizMode') {
+            setupQuiz();
+        } else if (this.id === 'studyMode') {
+            setupStudy();
+        }
+    });
+
+    $('.td-clickable').click(function (event) {
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        if ($('#quizMode')[0].checked) {
+            popupQuiz(this);
+        } else if ($('#studyMode')[0].checked) {
+            popupStudyCard(this);
+        }
+    });
+});
+
 function popupQuiz(source) {
     var tdId = source.id;
     var validIdRegex = /\d+-\d+/;
@@ -5,12 +25,10 @@ function popupQuiz(source) {
         return;
     }
 
-
     if (!elements[tdId]) {
         alert("This isn't ready to be tested on yet. We only have the first " + elements.length + ".");
         return;
     }
-
 
     // Show the modal and reset the values.
     $('#elementDataDiv').toggle(true);
@@ -20,6 +38,20 @@ function popupQuiz(source) {
     $('#atomicNumber').val('');
     $('#symbol').val('');
     $('#name').focus();
+}
+
+function popupStudyCard(source) {
+    var tdId = source.id;
+    var validIdRegex = /\d+-\d+/;
+    if (!validIdRegex.test(tdId) || source.innerHTML !== '?') {
+        return;
+    }
+
+    var elementData = elements[tdId];
+    $('#elementStudyDataDiv').toggle(true);
+    $('#elementName')[0].innerText = elementData.name;
+    $('#atomicNumberForStudy')[0].innerText = 'Atomic Number: ' + elementData.atomicNumber;
+    $('#symbolForStudy')[0].innerText = 'Symbol: ' + elementData.symbol;
 }
 
 function submitData(elementData) {
@@ -64,6 +96,7 @@ function submitData(elementData) {
 
 function closeModal() {
     $('#elementDataDiv').toggle(false);
+    $('#elementStudyDataDiv').toggle(false);
 }
 
 function checkKey() {
@@ -126,6 +159,14 @@ function checkKey() {
     } else {
         $('#aCell').addClass('error-field');
     }
+}
+
+function setupQuiz() {
+    // TODO: set all cells to have '?' and clear (and enable) the text inputs in the key.
+}
+
+function setupStudy() {
+    // TODO: Put basic info in each cell and populate (and disable) the text inputs in the key.
 }
 
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
