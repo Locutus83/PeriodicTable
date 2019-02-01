@@ -1,12 +1,4 @@
 $(document).ready(function () {
-    $('input[type=radio][name=mode]').change(function () {
-        if (this.id === 'quizMode') {
-            setupQuiz();
-        } else if (this.id === 'studyMode') {
-            setupStudy();
-        }
-    });
-
     $('.td-clickable').click(function (event) {
         event.stopPropagation();
         event.stopImmediatePropagation();
@@ -159,14 +151,6 @@ function checkKey() {
     } else {
         $('#aCell').addClass('error-field');
     }
-}
-
-function setupQuiz() {
-    // TODO: set all cells to have '?' and clear (and enable) the text inputs in the key.
-}
-
-function setupStudy() {
-    // TODO: Put basic info in each cell and populate (and disable) the text inputs in the key.
 }
 
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
